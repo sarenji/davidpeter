@@ -17,6 +17,7 @@
           "./"
         ],
         "alias": {
+          "admin": "./admin",
           "components": "./components",
           "pages": "./pages",
           "posts": "./posts",
