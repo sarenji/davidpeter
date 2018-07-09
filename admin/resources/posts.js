@@ -45,7 +45,7 @@ export const PostCreate = (props) => (
     <SimpleForm>
       <TextInput source="title" />
       <LongTextInput source="body" />
-      <TextInput label="Publication date" source="published_at" />
+      <DateInput label="Publication date" source="published_at" />
     </SimpleForm>
   </Create>
 );
