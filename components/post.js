@@ -32,7 +32,7 @@ const Post = ({ post: { title, slug, body, publishedAt, tagId }, tags }) => {
       </Body>
       <Caption>
         {slug && tag && tag.slug ?
-          <StyledLink href={`/${tag.slug}/${slug}`}><a>{title}</a></StyledLink>
+          <StyledLink href={`/${tag.slug}/${slug}`}>{title}</StyledLink>
         :
           <>{title}</>
         }
@@ -45,7 +45,7 @@ const Post = ({ post: { title, slug, body, publishedAt, tagId }, tags }) => {
         {tag &&
           <>
             {' '}&middot;{' '}
-            Stashed in <StyledLink href={tag.slug}><a>{tag.title}</a></StyledLink>
+            Stashed in <StyledLink href={tag.slug}>{tag.title}</StyledLink>
           </>
         }
       </Caption>
