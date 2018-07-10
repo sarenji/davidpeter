@@ -44,8 +44,8 @@ const Menu = ({ tags }) => (
     <MenuSection big>
       <MenuHeading>Biography</MenuHeading>
       <div>
-        I code and write. Once upon a time, I liked making things.
-              {' '}
+        I write. Sometimes with code, sometimes with words.
+        <br/>
         <StyledLink href="/resume">See resume &raquo;</StyledLink>
       </div>
     </MenuSection>
