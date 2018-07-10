@@ -9,7 +9,12 @@ import json from 'static/data/db.json';
 export const getPosts = ({ order, sortBy = 'id', type } = {}) => {
   let posts = (json && json.posts) || [];
   if (type) {
-    posts = posts.filter(post => post.type === type);
+    const tags = getTags();
+    // Find posts whose tag.slug matches `type`.
+    posts = posts.filter(post => {
+      const tag = tags.filter(tag => tag.id === post.tagId)[0];
+      return tag.slug === type;
+    });
   }
   if (order === 'desc') {
     posts.sort((a, b) => b[sortBy] - a[sortBy]);

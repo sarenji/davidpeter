@@ -12,7 +12,7 @@ const Page = ({ post, tags }) => (
   </Layout>
 );
 
-Page.getInitialProps = async ({ query: { id } }) => {
+Page.getInitialProps = ({ query: { id } }) => {
   const post = getPost({ id });
   const tags = getTags();
 

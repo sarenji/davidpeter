@@ -12,7 +12,7 @@ const Page = ({ post, tags }) => (
   </Layout>
 );
 
-Page.getInitialProps = async () => {
+Page.getInitialProps = () => {
   // Find latest post
   const posts = getPosts({ order: 'desc', sortBy: 'id' });
   const post = posts[0];

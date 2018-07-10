@@ -14,13 +14,17 @@ app.prepare()
     const tags = getTags();
 
     tags.forEach(tag => {
+      server.get(`/${tag.slug}`, (req, res, next) => {
+        app.render(req, res, '/list', { type: tag.slug });
+      });
+
       server.get(`/${tag.slug}/:slug`, (req, res, next) => {
         // Find post matching the slug
         const post = getPost({ slug: req.params.slug });
         if (!post) {
           next();
         } else {
-          app.render(req, res, '/post', { id: post.id });
+          app.render(req, res, '/show', { id: post.id });
         }
       });
     });
