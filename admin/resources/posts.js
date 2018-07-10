@@ -23,7 +23,7 @@ import {
   required,
   regex
 } from 'react-admin';
-import format from 'date-fns/format'
+import format from 'date-fns/format';
 
 /**
  * VALIDATIONS

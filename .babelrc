@@ -21,7 +21,8 @@
           "components": "./components",
           "pages": "./pages",
           "posts": "./posts",
-          "static": "./static"
+          "static": "./static",
+          "utils": "./utils"
         }
       }
     ]

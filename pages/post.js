@@ -5,8 +5,8 @@ import { getJSON, getPostsFromJSON, getTagsFromJSON } from 'utils/data';
 const Page = ({ post, tags }) => (
   <Layout tags={tags}>
     {post ?
-      <Post post={post} tags={tags}/>
-    :
+      <Post post={post} tags={tags} />
+      :
       <>Nothing to be found here!</>
     }
   </Layout>
@@ -14,14 +14,12 @@ const Page = ({ post, tags }) => (
 
 // Get the categories and the latest post.
 // FIXME: Would be nice to build up an immutable object.
-Page.getInitialProps = async ({ req }) => {
+Page.getInitialProps = async ({ req, query }) => {
   const json = await getJSON(!!req);
 
-  // Find latest post
-  const posts = getPostsFromJSON(json)
-    // Descending order.
-    .sort((a, b) => b.id - a.id);
-  const post = posts[0];
+  // Find post with matching slug
+  const posts = getPostsFromJSON(json);
+  const post = posts.filter(post => post.slug === query.slug)[0];
 
   // Find tags
   const tags = getTagsFromJSON(json);

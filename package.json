@@ -25,7 +25,7 @@
     "admin": "next dev ./admin -p 3001",
     "db": "PORT=3002 node ./admin/json-server.js",
     "dev": "concurrently --kill-others npm:admin npm:db npm:development",
-    "development": "next",
+    "development": "node server.js",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
