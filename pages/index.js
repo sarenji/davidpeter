@@ -16,7 +16,8 @@ const Index = ({ post }) => (
 // Get the latest post.
 Index.getInitialProps = async ({ req }) => {
   if (req) {
-    const res = await fetch('http://localhost:3002/posts?_order=desc,_limit=1');
+    const url = 'http://localhost:3002/posts?_sort=id&_order=desc&_limit=1';
+    const res = await fetch(url);
     const json = await res.json();
     if (json.length > 0) {
       return { post: json[0] };
