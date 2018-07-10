@@ -13,7 +13,6 @@ const Page = ({ post, tags }) => (
 );
 
 // Get the categories and the latest post.
-// FIXME: Would be nice to build up an immutable object.
 Page.getInitialProps = async ({ req, query }) => {
   const json = await getJSON(!!req);
 
