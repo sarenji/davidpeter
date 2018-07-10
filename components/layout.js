@@ -2,6 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 
 import styled from 'styled-components';
+import StyledLink from 'components/styled-link';
 
 const Container = styled.div`
   margin: 1em auto;
@@ -21,7 +22,7 @@ const Menu = ({ tags }) => (
         <MenuHeading>Work</MenuHeading>
         <MenuList>
           {tags.map(tag =>
-            <li key={tag.id}><MenuLink href={`/${tag.slug}`}>{tag.title}</MenuLink></li>
+            <li key={tag.id}><StyledLink href={`/${tag.slug}`}>{tag.title}</StyledLink></li>
           )}
         </MenuList>
       </MenuSection>
@@ -30,13 +31,13 @@ const Menu = ({ tags }) => (
       <MenuHeading>Follow</MenuHeading>
       <MenuList>
         <li>
-          <MenuLink href="https://github.com/sarenji">GitHub</MenuLink>
+          <StyledLink href="https://github.com/sarenji">GitHub</StyledLink>
         </li>
         <li>
-          <MenuLink href="https://twitter.com/davidnoob">Twitter</MenuLink>
+          <StyledLink href="https://twitter.com/davidnoob">Twitter</StyledLink>
         </li>
         <li>
-          <MenuLink href="https://facebook.com/about.xhtm">Facebook</MenuLink>
+          <StyledLink href="https://facebook.com/about.xhtm">Facebook</StyledLink>
         </li>
       </MenuList>
     </MenuSection>
@@ -45,7 +46,7 @@ const Menu = ({ tags }) => (
       <div>
         I code and write. Once upon a time, I liked making things.
               {' '}
-        <MenuLink href="/resume">See resume &raquo;</MenuLink>
+        <StyledLink href="/resume">See resume &raquo;</StyledLink>
       </div>
     </MenuSection>
   </MenuDiv>
@@ -66,22 +67,6 @@ const MenuSection = styled.div`
   ${(prop) => prop.big && `
     width: 25%;
   `}
-`;
-
-const MenuLink = ({ children, ...props }) =>
-  <Link passHref {...props}><MenuA>{children}</MenuA></Link>;
-
-const MenuA = styled.a`
-  color: #c65;
-  text-decoration: none;
-  padding: 6px 0 3px;
-  transition: background-color 100ms linear, color 100ms linear;
-
-  &:hover {
-    background: #344;
-    color: #fff;
-    border-radius: 2px;
-  }
 `;
 
 const MenuList = styled.ul`
