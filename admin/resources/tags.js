@@ -20,6 +20,7 @@ import {
  * VALIDATIONS
  */
 const validateTitle = [required()];
+const validateSlug = [required()];
 
 /**
  * FORMS
@@ -29,6 +30,7 @@ export const TagList = (props) => (
     <Datagrid>
       <TextField source="id" />
       <TextField source="title" />
+      <TextField source="slug" />
       <EditButton basePath="/tags" />
     </Datagrid>
   </List>
@@ -39,6 +41,7 @@ export const TagEdit = (props) => (
     <SimpleForm>
       <DisabledInput source="id" />
       <TextInput source="title" validate={validateTitle} />
+      <TextInput source="slug" validate={validateSlug} />
     </SimpleForm>
   </Edit>
 );
@@ -47,6 +50,7 @@ export const TagCreate = (props) => (
   <Create title="Create a Tag" {...props}>
     <SimpleForm>
       <TextInput source="title" validate={validateTitle} />
+      <TextInput source="slug" validate={validateSlug} />
     </SimpleForm>
   </Create>
 );
