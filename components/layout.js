@@ -14,16 +14,18 @@ const Container = styled.div`
  * MENU
  */
 
-const Menu = () => (
+const Menu = ({ tags }) => (
   <MenuDiv>
-    <MenuSection>
-      <MenuHeading>Work</MenuHeading>
-      <MenuList>
-        <li><MenuLink href="/photos">photos</MenuLink></li>
-        <li><MenuLink href="/stories">stories</MenuLink></li>
-        <li><MenuLink href="/projects">projects</MenuLink></li>
-      </MenuList>
-    </MenuSection>
+    {tags &&
+      <MenuSection>
+        <MenuHeading>Work</MenuHeading>
+        <MenuList>
+          {tags.map(tag =>
+            <li key={tag.id}><MenuLink href={`/${tag.slug}`}>{tag.title}</MenuLink></li>
+          )}
+        </MenuList>
+      </MenuSection>
+    }
     <MenuSection>
       <MenuHeading>Follow</MenuHeading>
       <MenuList>
@@ -133,7 +135,7 @@ const LogoA = styled.a`
 /**
  * LAYOUT
  */
-export default ({ children, title = "David Peter" }) => (
+export default ({ children, tags, title = "David Peter" }) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -144,7 +146,7 @@ export default ({ children, title = "David Peter" }) => (
     <Container>
       <header>
         <Logo/>
-        <Menu/>
+        <Menu tags={tags}/>
       </header>
 
       {children}
