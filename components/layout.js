@@ -4,11 +4,45 @@ import Head from "next/head";
 import styled from 'styled-components';
 import StyledLink from 'components/styled-link';
 
+const TopOfPage = styled.div`
+  position: relative;
+`;
+
 const Container = styled.div`
   margin: 1em auto;
   max-width: 640px;
   font: 100% "PT Sans", "Helvetica Neue", sans-serif;
   color: #344;
+`;
+
+const HiddenA = styled.a`
+  top: -50em;
+  left: -50em;
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: #c65;
+
+  &:focus, &:active {
+    top: auto;
+    left: auto;
+  }
+`;
+
+const SkipNav = HiddenA.extend`
+  &:focus, &:active {
+    top: 1em;
+    left: 1em;
+  }
+`;
+
+const BackToTop = HiddenA.extend`
+  &:focus, &:active {
+    bottom: 1em;
+    right: 1em;
+  }
 `;
 
 /**
@@ -121,21 +155,25 @@ const LogoA = styled.a`
  * LAYOUT
  */
 export default ({ children, tags, title = "David Peter" }) => (
-  <div>
+  <TopOfPage id="top">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8"/>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link href="https://fonts.googleapis.com/css?family=Lobster|PT+Sans:400,400i,700|PT+Serif:400,400i,700" rel="stylesheet"/>
     </Head>
+    <SkipNav href="#content">Skip navigation</SkipNav>
     <Container>
       <header>
         <Logo/>
         <Menu tags={tags}/>
       </header>
 
-      {children}
+      <main id="content">
+        {children}
+      </main>
 
     </Container>
-  </div>
+    <BackToTop href="#top">Back to top</BackToTop>
+  </TopOfPage>
 );
