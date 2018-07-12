@@ -2,17 +2,8 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import format from 'date-fns/format';
 
-import StyledLink, { StyledA } from 'components/styled-link';
-
-const Body = styled.div`
-  p {
-    font-family: "PT Serif", Georgia, serif;
-    font-size: .9375em;
-    line-height: 1.6em;
-  }
-
-  ${StyledA}
-`;
+import StyledLink from 'components/styled-link';
+import Body from 'components/styled-body';
 
 const Caption = styled.div`
   font-size: 12px;

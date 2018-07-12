@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default ({ children, ...props }) =>
   <Link passHref {...props}><StyledA>{children}</StyledA></Link>;
 
-export const StyledA = styled.a`
+export const aCSS = css`
   color: #c65;
   text-decoration: none;
   padding: 6px 0 3px;
@@ -16,3 +16,6 @@ export const StyledA = styled.a`
     border-radius: 2px;
   }
 `;
+
+// FIXME: Is this the best way?
+const StyledA = styled.a`${aCSS}`;

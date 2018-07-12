@@ -79,8 +79,8 @@ const Menu = ({ tags }) => (
       <MenuHeading>Biography</MenuHeading>
       <div>
         I write. Sometimes with code, sometimes with words.
-        <br/>
-        <StyledLink href="/resume">See resume &raquo;</StyledLink>
+        {' '}
+        <StyledLink href="/about">About me &raquo;</StyledLink>
       </div>
     </MenuSection>
   </MenuDiv>
