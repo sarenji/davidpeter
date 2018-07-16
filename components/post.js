@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'react-remarkable';
 import format from 'date-fns/format';
 
 import StyledLink from 'components/styled-link';
@@ -17,9 +17,9 @@ const Post = ({ post: { title, slug, body, publishedAt, tagId }, tags }) => {
   return (
     <div>
       <Body>
-        <ReactMarkdown>
+        <Markdown>
           {body}
-        </ReactMarkdown>
+        </Markdown>
       </Body>
       <Caption>
         {slug && tag && tag.slug ?
