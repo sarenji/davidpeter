@@ -14,7 +14,7 @@ const Page = ({ post, tags }) => (
 
 Page.getInitialProps = () => {
   // Find latest post
-  const posts = getPosts({ order: 'desc', sortBy: 'id' });
+  const posts = getPosts({ order: 'desc' });
   const post = posts[0];
   const tags = getTags();
 

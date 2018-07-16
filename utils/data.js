@@ -6,7 +6,7 @@ import json from 'static/data/db.json';
  * @param {string} sortBy  - 'id' by default.
  * @param {string} type    - if provided, filters posts by this type, e.g. 'stories'.
  */
-export const getPosts = ({ order, sortBy = 'id', type } = {}) => {
+export const getPosts = ({ order, sortBy = 'publishedAt', type } = {}) => {
   let posts = (json && json.posts) || [];
   if (type) {
     const tags = getTags();
@@ -16,12 +16,16 @@ export const getPosts = ({ order, sortBy = 'id', type } = {}) => {
       return tag.slug === type;
     });
   }
+
+  const transform = posts.map(post => [ post[sortBy], post ]);
+
   if (order === 'desc') {
-    posts.sort((a, b) => b[sortBy] - a[sortBy]);
+    transform.sort(([a,], [b,]) => (a < b) ? 1 : (a > b) ? -1 : 0);
   } else {
-    posts.sort((a, b) => a[sortBy] - b[sortBy]);
+    transform.sort(([a,], [b,]) => (a < b) ? -1 : (a > b) ? 1 : 0);
   }
-  return posts;
+
+  return transform.map(([ , post ]) => post);
 };
 
 /**
