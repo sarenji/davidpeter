@@ -10,6 +10,10 @@ const Body = styled.div`
     font-family: "PT Sans", "Helvetica Neue", sans-serif;
   }
 
+  h1 {
+    margin-top: 1em;
+  }
+
   dt {
     margin-top: 1em;
   }

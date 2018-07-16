@@ -5,6 +5,15 @@ import format from 'date-fns/format';
 import StyledLink from 'components/styled-link';
 import Body from 'components/styled-body';
 
+const Spacing = styled.div`
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-top: 2px solid #ccc;
+  &:first-child {
+    border-top: none;
+  }
+`;
+
 const Caption = styled.div`
   font-size: 12px;
   line-height: 24px;
@@ -15,7 +24,7 @@ const Caption = styled.div`
 const Post = ({ post: { title, slug, body, publishedAt, tagId }, tags }) => {
   const tag = tags && tags.filter(tag => tag.id === tagId)[0];
   return (
-    <div>
+    <Spacing>
       <Body>
         <Markdown>
           {body}
@@ -40,7 +49,7 @@ const Post = ({ post: { title, slug, body, publishedAt, tagId }, tags }) => {
           </>
         }
       </Caption>
-    </div>
+    </Spacing>
   );
 };
 
