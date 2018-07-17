@@ -30,6 +30,7 @@
     "dev": "concurrently --kill-others npm:admin npm:db npm:site",
     "site": "node ./server",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
