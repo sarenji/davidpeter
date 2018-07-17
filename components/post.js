@@ -8,10 +8,6 @@ import Body from 'components/styled-body';
 const Spacing = styled.div`
   margin-top: 2em;
   margin-bottom: 2em;
-  border-top: 2px solid #ccc;
-  &:first-child {
-    border-top: none;
-  }
 `;
 
 const Caption = styled.div`

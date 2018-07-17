@@ -21,6 +21,18 @@ const Body = styled.div`
   a {
     ${aCSS}
   }
+
+  blockquote {
+    border-left: 4px solid #eee;
+    margin-left: 0;
+    padding-left: 36px;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
 `;
 
 export default Body;
