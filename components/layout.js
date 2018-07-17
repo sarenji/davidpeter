@@ -111,7 +111,7 @@ const MenuList = styled.ul`
 
 const MenuHeading = styled.h2`
   font-size: 1em;
-  font-weight: normal;
+  font-weight: 600;
   line-height: 1.375em;
   margin: 0 0 0.5em 0;
   text-transform: uppercase;
