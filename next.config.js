@@ -1,28 +1,32 @@
-const json = require('./static/data/db.json');
+const path = require("path");
 
-module.exports = {
-  exportPathMap: function () {
-    const { tags, posts } = json;
+const extension = /\.mdx?$/;
 
-    const standardPages = {
-      '/': { page: '/' },
-      '/about': { page: '/about' }
-    };
+const withPlugins = require("next-compose-plugins");
+const withLess = require("@zeit/next-less");
+const withMDX = require("@zeit/next-mdx")({
+  extension
+});
 
-    const tagIndexPages = tags.reduce((accum, tag) => {
-      return Object.assign(accum, {
-        [`/${tag.slug}`]: { page: '/list', query: { type: tag.slug } }
-      });
-    }, {});
+const nextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: extension,
+      use: [
+        {
+          loader: path.join(__dirname, "./frontmatter-loader")
+        }
+      ]
+    });
 
-    const postShowPages = posts.reduce((accum, post) => {
-      const tag = tags.filter(tag => tag.id === post.tagId)[0];
-      return Object.assign(accum, {
-        [`/${tag.slug}/${post.slug}`]: { page: '/show', query: { id: post.id } }
-      });
-    }, {});
-
-    const siteMap = Object.assign(standardPages, tagIndexPages, postShowPages);
-    return siteMap;
+    return config;
   }
 };
+
+module.exports = withPlugins(
+  [
+    [withLess, { cssModules: true }],
+    [withMDX, { pageExtensions: ["js", "md", "mdx"] }]
+  ],
+  nextConfig
+);

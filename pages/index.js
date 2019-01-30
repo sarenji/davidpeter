@@ -1,24 +1,24 @@
-import Layout from 'components/layout';
-import Post from 'components/post';
-import { getPosts, getTags } from 'utils/data';
+import { Fragment } from "react";
+import stories from "@dpeter/preval/stories";
 
-const Page = ({ post, tags }) => (
-  <Layout tags={tags}>
-    {post ?
-      <Post post={post} tags={tags}/>
-    :
-      <>Nothing to be found here!</>
-    }
-  </Layout>
+const latestStories = [...stories].sort(({ date: a }, { date: b }) => {
+  return new Date(b) - new Date(a);
+});
+
+const Index = () => (
+  <Fragment>
+    <h1>Personal writing</h1>
+    {latestStories.map(({ date, spoiler, title, url }) => {
+      return (
+        <div key={url}>
+          <h2>
+            <a href={url}>{title}</a>
+          </h2>
+          <p>{spoiler}</p>
+        </div>
+      );
+    })}
+  </Fragment>
 );
 
-Page.getInitialProps = () => {
-  // Find latest post
-  const posts = getPosts({ order: 'desc' });
-  const post = posts[0];
-  const tags = getTags();
-
-  return { post, tags };
-};
-
-export default Page;
+export default Index;
