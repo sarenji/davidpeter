@@ -10,21 +10,27 @@ const SocialIcons = () => {
       <div className="sr-only">Follow me</div>
       <ul className={css.list}>
         <li>
-          <Link href="https://github.com/sarenji">
-            <SocialIcon icon="github" />
-            <span className="sr-only">GitHub</span>
-          </Link>
-        </li>
-        <li>
           <Link href="https://twitter.com/davidnoob">
             <SocialIcon icon="twitter" />
             <span className="sr-only">Twitter</span>
           </Link>
         </li>
         <li>
+          <Link href="https://instagram.com/davidnoob">
+            <SocialIcon icon="instagram" />
+            <span className="sr-only">Instagram</span>
+          </Link>
+        </li>
+        <li>
           <Link href="https://facebook.com/about.xhtm">
             <SocialIcon icon="facebook" />
             <span className="sr-only">Facebook</span>
+          </Link>
+        </li>
+        <li>
+          <Link href="https://github.com/sarenji">
+            <SocialIcon icon="github" />
+            <span className="sr-only">GitHub</span>
           </Link>
         </li>
       </ul>

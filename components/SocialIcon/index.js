@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import instagram from "simple-icons/icons/instagram";
 import twitter from "simple-icons/icons/twitter";
 import github from "simple-icons/icons/github";
 import facebook from "simple-icons/icons/facebook";
@@ -6,6 +6,7 @@ import facebook from "simple-icons/icons/facebook";
 import css from "./index.less";
 
 const lookup = {
+  instagram,
   twitter,
   github,
   facebook
