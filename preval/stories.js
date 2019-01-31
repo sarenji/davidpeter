@@ -1,16 +1,15 @@
 // @preval
 const fs = require("fs");
-const matter = require("gray-matter");
+const parseMatter = require("../utils/parse-matter");
 
 const storySlugs = fs.readdirSync("./pages/stories");
 const stories = storySlugs.map(slug => {
   const path = `./pages/stories/${slug}/index.mdx`;
   const src = fs.readFileSync(path, { encoding: "utf-8" });
-  const { content, data } = matter(src);
+  const { data } = parseMatter(src);
   return {
-    ...data,
-    wordCount: content.split(" ").length,
-    url: `/stories/${slug}`
+    url: `/stories/${slug}`,
+    meta: data
   };
 });
 

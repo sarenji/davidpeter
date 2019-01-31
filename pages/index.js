@@ -2,14 +2,16 @@ import { Fragment } from "react";
 import MetaInfo from "@dpeter/components/MetaInfo";
 import stories from "@dpeter/preval/stories";
 
-const latestStories = [...stories].sort(({ date: a }, { date: b }) => {
-  return new Date(b) - new Date(a);
-});
+const latestStories = [...stories].sort(
+  ({ meta: { date: a } }, { meta: { date: b } }) => {
+    return new Date(b) - new Date(a);
+  }
+);
 
 const Index = () => (
   <Fragment>
     <h1>Personal writing</h1>
-    {latestStories.map(({ date, spoiler, title, url, wordCount }) => {
+    {latestStories.map(({ url, meta: { date, spoiler, title, wordCount } }) => {
       return (
         <div key={url}>
           <h2>

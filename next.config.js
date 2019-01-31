@@ -14,7 +14,7 @@ const nextConfig = {
       test: extension,
       use: [
         {
-          loader: path.join(__dirname, "./frontmatter-loader")
+          loader: path.join(__dirname, "./utils/frontmatter-loader")
         }
       ]
     });
