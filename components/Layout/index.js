@@ -1,7 +1,6 @@
 import Head from "next/head";
-import cx from "classnames";
-import Logo from "@dpeter/components/Logo";
-import Menu from "@dpeter/components/Menu";
+import Header from "@dpeter/components/Header";
+import Footer from "@dpeter/components/Footer";
 import css from "./index.less";
 
 const Layout = ({ children }) => (
@@ -17,25 +16,12 @@ const Layout = ({ children }) => (
     </Head>
 
     <div className={css.body}>
-      <header>
-        <a
-          className={cx("sr-only sr-only-focusable", css.skipNav)}
-          href="#content"
-        >
-          Skip navigation
-        </a>
-        <Logo />
-        <Menu />
-      </header>
+      <Header />
 
       <main id="content">{children}</main>
-    </div>
 
-    <footer>
-      <a className={cx("sr-only sr-only-focusable", css.backToTop)} href="#top">
-        Back to top
-      </a>
-    </footer>
+      <Footer />
+    </div>
   </div>
 );
 
