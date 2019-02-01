@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Link from "@dpeter/components/Link";
 import MetaInfo from "@dpeter/components/MetaInfo";
 import stories from "@dpeter/preval/stories";
 
@@ -15,7 +16,7 @@ const Index = () => (
       return (
         <div key={url}>
           <h2>
-            <a href={url}>{title}</a>
+            <Link href={url}>{title}</Link>
           </h2>
           <MetaInfo date={date} wordCount={wordCount} />
           <p>{spoiler}</p>
