@@ -14,7 +14,8 @@ const Layout = ({ children }) => (
         content="David Peter writes, sometimes with code, sometimes with words."
       />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content="@davidnoob" />
+      <meta name="twitter:site" content="@davidnoob" />
+      <meta name="twitter:title" content="David Peter" />
       <link
         href="https://fonts.googleapis.com/css?family=Lobster|Libre+Baskerville"
         rel="stylesheet"
