@@ -7,9 +7,6 @@ import css from "./index.less";
 
 const Header = ({ router }) => (
   <header>
-    <a href="#content" className={cx("sr-only sr-only-focusable", css.skipNav)}>
-      Skip navigation
-    </a>
     <div className={css.header}>
       <div className={css.left}>
         <Logo />

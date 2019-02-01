@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-export default ({ children, ...props }) => (
+export default ({ children, className, ...props }) => (
   <Link {...props}>
-    <a>{children}</a>
+    <a className={className}>{children}</a>
   </Link>
 );

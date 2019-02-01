@@ -1,14 +1,23 @@
-import Link from "next/link";
+import { withRouter } from "next/router";
+import cx from "classnames";
+import Link from "@dpeter/components/Link";
 import css from "./index.less";
 
-const Logo = () => (
-  <div className={css.logoHeader}>
-    <Link passHref href="/">
-      <a className={css.logo}>
-        david<span>.</span>
-      </a>
-    </Link>
-  </div>
-);
+const Logo = ({ router }) => {
+  const isHome = router.pathname === "/";
+  return (
+    <div className={css.logoHeader}>
+      <Link
+        href="/"
+        className={cx({
+          [css.logo]: isHome
+        })}
+      >
+        david
+        <span className={css.dot}>.</span>
+      </Link>
+    </div>
+  );
+};
 
-export default Logo;
+export default withRouter(Logo);

@@ -9,6 +9,10 @@ const Layout = ({ children }) => (
       <title>David Peter</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta
+        name="description"
+        content="David Peter writes, sometimes with code, sometimes with words."
+      />
       <link
         href="https://fonts.googleapis.com/css?family=Lobster|Libre+Baskerville"
         rel="stylesheet"
