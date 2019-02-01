@@ -18,7 +18,7 @@ const EstimatedReadTime = ({ wordCount }) => {
   const coffees = Math.max(1, Math.floor(minutesRounded / 5));
   return (
     <Fragment>
-      {new Array(coffees).fill(0).map(() => "☕️")}
+      {new Array(coffees).fill(0).map(() => "☕️")}{" "}
       {minutesRounded === 1 ? "1 minute" : `${minutesRounded} minutes`}
     </Fragment>
   );
