@@ -3,7 +3,9 @@ import Head from "next/head";
 
 import MetaInfo from "@dpeter/components/MetaInfo";
 
-const withPost = ({ title, date, spoiler, wordCount }) => ({ children }) => {
+const withPost = ({ title, date, spoiler, wordCount, className }) => ({
+  children
+}) => {
   return (
     <Fragment>
       <Head>
@@ -14,7 +16,7 @@ const withPost = ({ title, date, spoiler, wordCount }) => ({ children }) => {
       </Head>
       <h1>{title}</h1>
       <MetaInfo date={date} wordCount={wordCount} />
-      {children}
+      <div className={className}>{children}</div>
     </Fragment>
   );
 };
