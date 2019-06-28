@@ -1,11 +1,15 @@
 const path = require("path");
 
+const remarkSmartypants = require("./utils/remark-smartypants");
 const extension = /\.mdx?$/;
 
 const withPlugins = require("next-compose-plugins");
 const withLess = require("@zeit/next-less");
-const withMDX = require("@zeit/next-mdx")({
-  extension
+const withMDX = require("@next/mdx")({
+  extension,
+  options: {
+    remarkPlugins: [remarkSmartypants]
+  }
 });
 
 const nextConfig = {

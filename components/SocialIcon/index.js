@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import instagram from "simple-icons/icons/instagram";
 import twitter from "simple-icons/icons/twitter";
 import github from "simple-icons/icons/github";
@@ -26,6 +28,12 @@ const SocialIcon = ({ icon, size }) => {
 
 SocialIcon.defaultProps = {
   size: 24
+};
+
+SocialIcon.propTypes = {
+  icon: PropTypes.oneOf(["instagram", "twitter", "github", "facebook"])
+    .isRequired,
+  size: PropTypes.number
 };
 
 export default SocialIcon;
