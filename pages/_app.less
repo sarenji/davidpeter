@@ -1,4 +1,21 @@
 :global {
+  :root {
+    --background: #fff;
+    --shade: #eee;
+    --accent: rgb(202, 76, 53);
+    --color: #344;
+    --base: 6px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #111;
+      --shade: #222;
+      --accent: rgb(146, 61, 46);
+      --color: #aaa;
+    }
+  }
+
   .relative {
     position: relative;
   }
@@ -34,8 +51,6 @@
 
   // Pages
 
-  @base: 6px;
-
   h1,
   h2,
   h3,
@@ -47,20 +62,25 @@
   }
 
   h1 {
-    font-size: @base * 6;
-    line-height: @base * 8;
+    font-size: ~"calc(var(--base) * 6)";
+    line-height: ~"calc(var(--base) * 8)";
     letter-spacing: -1px;
   }
 
   h2 {
-    font-size: @base * 5;
-    line-height: @base * 7;
+    font-size: ~"calc(var(--base) * 5)";
+    line-height: ~"calc(var(--base) * 7)";
     letter-spacing: -1px;
   }
 
+  html,
   body {
-    font-size: @base * 3;
-    line-height: @base * 5;
+    background-color: var(--background);
+  }
+
+  body {
+    font-size: ~"calc(var(--base) * 3)";
+    line-height: ~"calc(var(--base) * 5)";
     font-family: "Libre Baskerville", Georgia, serif;
     margin: 0;
   }
@@ -74,17 +94,14 @@
   }
 
   a {
-    @color: rgb(202, 76, 53);
-    @hoverColor: rgb(30, 59, 126);
-    color: @color;
+    color: var(--accent);
     text-decoration: none;
     padding: 6px 0 0;
     transition: 100ms linear;
     &:active,
     &:hover,
     &:focus {
-      color: @hoverColor;
-      fill: lighten(@hoverColor, 30%);
+      text-decoration: underline;
     }
   }
 
@@ -93,13 +110,13 @@
   }
 
   blockquote {
-    border-left: 4px solid #eee;
-    margin-left: 0;
-    padding-left: 36px;
+    border-left: var(--base) solid var(--shade);
+    margin: ~"calc(var(--base) * 3) 0 0";
+    padding-left: ~"calc(var(--base) * 5)";
   }
 
   hr {
     border: none;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--shade);
   }
 }
