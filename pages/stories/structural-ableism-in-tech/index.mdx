@@ -1,0 +1,72 @@
+---
+title: "Structural ableism in tech"
+date: "2020-06-28"
+spoiler: "On Twitter's culture of inaccessibility and how to fix it"
+draft: true
+---
+
+import withPost from "@dpeter/utils/with-post";
+
+export default withPost(meta);
+
+Here we are again. Twitter recently released an “audio tweet” feature. The [logic behind it](https://twitter.com/mayagpatterson/status/1273313298117623808) was to empower activists, journalists, and storytellers.
+
+As implemented, Twitter’s audio tweets are totally inaccessible for deaf and hard of hearing people like me, as well as those with auditory processing disorders or difficulty hearing or understanding audio. This isn’t empowering. Deaf and disabled people are activists, journalists, and storytellers, too, and also benefit from access to their work.
+
+When confronted with this oversight, a (or the) head of Design and Research at Twitter wrote a now-deleted tweet, “We formed a design systems team recently that is responsible for accessibility across Twitter. This is a test. Hypothetically a test can go away in a few weeks after we launch. The work you’re describing is important. However that would have meant shipping in 2021/22.”
+
+Now, [you shouldn’t blame one person](https://twitter.com/davidnoob/status/1273892826980298758) for what is an organizational failure. However, these rebuttals are tired and familiar, so I think it’s important to address them in turn.
+
+## “We formed a design systems team recently that is responsible for accessibility across Twitter.”
+
+A design system cannot be solely responsible for accessibility across a company. A design system is a box of lego bricks for teams to build products with. Those lego bricks ideally have accessibility baked in, yes. But the app you build with those lego bricks may be inaccessible regardless.
+
+Sometimes a team rejects a particular lego brick in favor of their own. Often, their own thing is a one-off built according to product needs. But those one-offs need to be accessible, too. Accessibility doesn’t spread organically. In our ableist world, accessibility must be a conscious, intentional choice.
+
+Furthermore, accessibility cannot be the responsibility of a team with limited scope. Accessibility must pervade all corners of a company, across design and engineering and content strategy. Above all, accessibility compliance cannot be the responsibility of a group of employees who are paid to prioritize other projects. [Accessibility cannot be a volunteer responsibility](https://twitter.com/LittleKope/status/1273673343556653056).
+
+## “This is a test. Hypothetically a test can go away in a few weeks after we launch.”
+
+A test is typically an experiment wherein a team releases a product to a number of users to see how users interact with it over a set amount of time. But while not everyone could _make_ audio tweets, _everyone_ can interact with audio tweets.
+
+Moreover, if the product has a showstopper bug that renders a significant percentage of its users unable to interact with it, generally the experiment is pulled if there’s no easy way to fix the bug. Once the bug is fixed, then the experiment restarts. That didn’t happen here.
+
+Twitter could have papered over this by posting guidance on how to make accessible audio tweets. This could have been as simple as a suggestion to write a tweet thread with the transcript or link to a transcript. These are band-aid solutions to systemic problems. But they work. People volun-tweet out transcripts to work around other people’s uncaptioned videos all the time.
+
+Because Twitter did not provide any accessibility guidance when they rolled out this test, early users did not think to transcribe their audio tweets. When accessibility is an afterthought, users develop inaccessible patterns which never get re-examined, which then cause systemic harm.
+
+## “The work you’re describing is important. However that would have meant shipping in 2021/22.”
+
+There are several things wrong with this statement. It turns out the work they were thinking of was _automatic_ captioning (“autocaptioning”) of audio tweets. While occasionally useful, autocaptioning is inaccurate, incomplete, and biased.
+
+1. It is inaccurate because an AI, rather than the original source, translates the audio. Even human translators, who currently perform better than AIs, are inaccurate by virtue of not being the original source.
+2. Autocaptioning is incomplete because it doesn’t codify non-textual information like tone and voice.
+3. Autocaptioning bias is well-documented; AIs [struggle with Black voices](https://www.nytimes.com/2020/03/23/technology/speech-recognition-bias-apple-amazon-google.html) and accented speech. A Black Deaf employee would have caught this immediately.
+
+The benefit of autocaptioning is that it approaches the problem of users not captioning content systematically—it's better than nothing. But for the purposes of a test, letting the original source manually caption their content is much easier to implement. There are standard captioning codecs like SRT and VTT with plenty of software to help write them.
+
+Or, as outlined in the previous section, encourage users to write a transcript in the tweets. Plenty of solutions exist that don't require shipping 1-2 years later. Nudge your users toward accessible solutions and reward them for doing it.
+
+Lastly, the Twitter community is full of talent. [Autocaptioning was implemented](https://twitter.com/headlinerclip/status/1274106813479190528) by a Twitter bot developed by Headliner. If they could do it, Twitter has more than enough resources to make something of their own or otherwise pay for. Yet Twitter’s culture of inaccessibility led to the release of a product where accessibility was an afterthought.
+
+Accessibility determines design, user interaction, user experience, and copy decisions, and so must be considered from the start of the product process. Accessibility is a critical part of a minimally viable product just like security and data compliance.
+
+## So, what can tech companies do?
+
+For me, the problem actually isn’t inaccessibility. The problem is [ableism](https://www.selfdefined.app/definitions/ableism/). Inaccessibility can be fixed. Accessibility is a process. Ableism is far more intractable.
+
+I need you to understand something. Ableism isn’t just a vile president mocking Serge Kovaleski on national television. Ableism is people making fun of that same president’s weight and gait, his ability to drink from a glass or read a teleprompter. When you make a value judgment on the president’s body and mind, you aren’t harming the president. He’ll be fine. Instead, you harm disabled people.
+
+[Culture is the behavior you reward and punish.](https://jocelyngoldfein.com/culture-is-the-behavior-you-reward-and-punish-7e8e75c6543e) If teams churn out products without accessibility included in the process, and leadership still rewards them for it, that is the company culture. Those are its values. If leadership isn't actively anti-ableist, it’s ableist.
+
+Ableism exists in the makeup of popular accessibility companies, whose team pages reveal a never-ending stream of white, able-bodied people. Ableism exists in the words of an accessibility specialist who referred to his co-worker twice as “wheelchair-bound.” Ableism exists in how user testing almost singularly excludes disabled people. Ableism exists in developers who are rewarded for their outward support of accessibility, yet still treat disabled people like me like an afterthought, stuffing our needs into a ticket left to languish in a dusty backlog.
+
+Accessibility cannot be a post-release feature. Accessibility is _fundamental_ to the work we do. It is part of each ticket we create, part of the technical specs we write, part of the designs we draw. I am tired of accessibility only being brought up when companies do damage control. I’m tired of apologies and empty promises. I don’t have time to wait until you start feeling empathy for disabled people just so you can arrive at the same conclusions we’ve been sharing all this time. Disabled people are already here, and we’ve been here a while.
+
+Listen.
+
+You must actively make the choice to improve your accessibility knowledge. You must choose to consider accessibility as a fundamental part of a ticket, a product release. Sponsor and hire disabled people to leadership positions, especially BIPOC disabled people. Ensure your physical offices, internal tools, and meetings are accessible. User test with disabled people, not just abled people. Offer more flexible work with respect to hours and location. [Open a dialogue](https://blog.tenon.io/sample-post) for disabled users to give accessibility feedback. Work to dismantle white supremacy, which exists in and is perpetuated by the disability community as well.
+
+[Minoritized](https://www.selfdefined.app/definitions/minoritised/) groups [aren't equal until all of us are equal](https://ideas.ted.com/none-of-us-is-free-until-all-of-us-are-free/). There is no one-solution-at-a-time about it.
+
+We must be actively anti-ableist. Just as we build products with design systems, we must build an anti-ableist culture brick by brick. In a traditionally inaccessible product, our users will be abled people. To expand our audience, we must actively seek out, retain, and promote disabled people, but not just white disabled cis men. Black and Indigenous disabled people. Trans disabled people. Disabled people of any gender who are drawn to femininity. Intersectionality demands it.
