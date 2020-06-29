@@ -11,12 +11,10 @@ const Header = ({ router }) => (
       <div className={css.left}>
         <Logo />
       </div>
-      {router.pathname === "/" && (
-        <div className={css.right}>
-          I write. Sometimes with code, sometimes with words.{" "}
-          <Link href="/about">About me &raquo;</Link>
-        </div>
-      )}
+      <div className={css.right}>
+        I write. Sometimes with code, sometimes with words.{" "}
+        <Link href="/about">About me &raquo;</Link>
+      </div>
     </div>
   </header>
 );
