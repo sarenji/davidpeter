@@ -10,12 +10,14 @@ const Logo = ({ router }) => {
       <Link
         href="/"
         className={cx({
-          [css.logo]: isHome
+          [css.logo]: isHome,
         })}
       >
         david
-        <span className={css.dot}>.</span>
       </Link>
+      <span aria-hidden="true" className={css.dot}>
+        .
+      </span>
     </div>
   );
 };

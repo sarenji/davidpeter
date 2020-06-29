@@ -1,19 +1,35 @@
 :global {
-  :root {
+  .light-theme() {
     --background: #fff;
     --shade: #eee;
     --accent: rgb(202, 76, 53);
     --color: #344;
+  }
+
+  .dark-theme() {
+    --background: #111;
+    --shade: #222;
+    --accent: rgb(197, 95, 77);
+    --color: #999;
+  }
+
+  :root {
+    .light-theme();
     --base: 6px;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #111;
-      --shade: #222;
-      --accent: rgb(146, 61, 46);
-      --color: #aaa;
+      .dark-theme();
     }
+  }
+
+  .light-theme {
+    .light-theme();
+  }
+
+  .dark-theme {
+    .dark-theme();
   }
 
   .relative {
@@ -95,13 +111,12 @@
 
   a {
     color: var(--accent);
-    text-decoration: none;
-    padding: 6px 0 0;
     transition: 100ms linear;
-    &:active,
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+    text-decoration: underline;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration-color: var(--color);
     }
   }
 
@@ -118,5 +133,15 @@
   hr {
     border: none;
     border-top: 1px solid var(--shade);
+  }
+
+  a[href^="#fn-"] {
+    &:before {
+      content: "[";
+    }
+
+    &:after {
+      content: "]";
+    }
   }
 }
