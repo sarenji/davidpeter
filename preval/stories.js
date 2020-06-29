@@ -14,6 +14,6 @@ const stories = storySlugs
     };
   })
   // Filter out draft posts
-  .filter(({ meta: { draft } }) => !!draft);
+  .filter(({ meta: { draft } }) => !draft);
 
 module.exports = stories;
