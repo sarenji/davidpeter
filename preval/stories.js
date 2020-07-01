@@ -2,6 +2,8 @@
 const fs = require("fs");
 const parseMatter = require("../utils/parse-matter");
 
+// cachebust counter: 1
+
 const storySlugs = fs.readdirSync("./pages/stories");
 const stories = storySlugs
   .map((slug) => {

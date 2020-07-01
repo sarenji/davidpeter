@@ -33,7 +33,7 @@
     "dev": "npm run clear-cache && next",
     "build": "next build",
     "//": "see: https://github.com/kentcdodds/babel-plugin-preval/issues/19",
-    "clear-cache": "rm -rf ~/.babel.json",
+    "clear-cache": "rm -rf ./node_modules/.cache/@babel/register",
     "export": "npm run build && next export",
     "deploy": "npm run export && cd out && now --public",
     "start": "next start"
