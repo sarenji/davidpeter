@@ -1,6 +1,5 @@
-import { Fragment } from "react";
 import format from "date-fns/format";
-import css from "./index.less";
+import css from "./index.module.css";
 
 const MetaInfo = ({ date, wordCount }) => {
   return (

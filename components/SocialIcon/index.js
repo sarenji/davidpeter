@@ -1,11 +1,9 @@
-import PropTypes from "prop-types";
-
 import instagram from "simple-icons/icons/instagram";
 import twitter from "simple-icons/icons/twitter";
 import github from "simple-icons/icons/github";
 import facebook from "simple-icons/icons/facebook";
 
-import css from "./index.less";
+import css from "./index.module.css";
 
 const lookup = {
   instagram,
@@ -14,7 +12,7 @@ const lookup = {
   facebook
 };
 
-const SocialIcon = ({ icon, size }) => {
+const SocialIcon = ({ icon, size = 24 }) => {
   const { svg } = lookup[icon];
   return (
     <span
@@ -24,16 +22,6 @@ const SocialIcon = ({ icon, size }) => {
       dangerouslySetInnerHTML={{ __html: svg }}
     />
   );
-};
-
-SocialIcon.defaultProps = {
-  size: 24
-};
-
-SocialIcon.propTypes = {
-  icon: PropTypes.oneOf(["instagram", "twitter", "github", "facebook"])
-    .isRequired,
-  size: PropTypes.number
 };
 
 export default SocialIcon;

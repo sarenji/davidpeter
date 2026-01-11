@@ -1,0 +1,142 @@
+:root {
+  --background: #fff;
+  --shade: #eee;
+  --accent: rgb(202, 76, 53);
+  --color: #344;
+
+  --base: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111;
+    --shade: #222;
+    --accent: rgb(197, 95, 77);
+    --color: #999;
+  }
+}
+
+.light-theme {
+  --background: #fff;
+  --shade: #eee;
+  --accent: rgb(202, 76, 53);
+  --color: #344;
+}
+
+.dark-theme {
+  --background: #111;
+  --shade: #222;
+  --accent: rgb(197, 95, 77);
+  --color: #999;
+}
+
+.relative {
+  position: relative;
+}
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
+}
+
+[tabindex="-1"] {
+  outline: none;
+}
+
+/* Pages */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: calc(var(--base) * 6);
+  line-height: calc(var(--base) * 8);
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: calc(var(--base) * 5);
+  line-height: calc(var(--base) * 7);
+  letter-spacing: -1px;
+}
+
+html,
+body {
+  background-color: var(--background);
+}
+
+body {
+  font-size: calc(var(--base) * 3);
+  line-height: calc(var(--base) * 5);
+  font-family: "Libre Baskerville", Georgia, serif;
+  margin: 0;
+}
+
+dt {
+  margin-top: 1em;
+}
+
+li {
+  margin-top: 12px;
+}
+
+a {
+  color: var(--accent);
+  transition: 100ms linear;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration-color: var(--color);
+}
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: var(--base) solid var(--shade);
+  margin: calc(var(--base) * 3) 0 0;
+  padding-left: calc(var(--base) * 5);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--shade);
+}
+
+a[href^="#fn-"]:before {
+  content: "[";
+}
+
+a[href^="#fn-"]:after {
+  content: "]";
+}

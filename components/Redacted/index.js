@@ -1,13 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
-import styles from "./Redacted.less";
+import styles from "./Redacted.module.css";
 
 const Redacted = ({ text = "redacted" }) => {
   return <span className={styles.redacted}>[{text}]</span>;
-};
-
-Redacted.propTypes = {
-  text: PropTypes.string
 };
 
 export default Redacted;

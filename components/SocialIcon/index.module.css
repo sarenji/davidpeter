@@ -3,8 +3,8 @@
   vertical-align: top;
   fill: var(--color);
   transition: 100ms linear;
+}
 
-  &:hover {
-    fill: var(--accent);
-  }
+.icon:hover {
+  fill: var(--accent);
 }

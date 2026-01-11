@@ -1,7 +1,9 @@
 import { Fragment } from "react";
-import Link from "@dpeter/components/Link";
-import MetaInfo from "@dpeter/components/MetaInfo";
-import stories from "@dpeter/preval/stories";
+import Link from "#components/Link";
+import MetaInfo from "#components/MetaInfo";
+import stories from "#preval/stories";
+
+console.log(stories);
 
 const latestStories = [...stories].sort(
   ({ meta: { date: a } }, { meta: { date: b } }) => {
@@ -9,7 +11,7 @@ const latestStories = [...stories].sort(
   }
 );
 
-const Index = () => (
+export default () => (
   <Fragment>
     <h1>Personal writing</h1>
     {latestStories.map(({ url, meta: { date, spoiler, title, wordCount } }) => {
@@ -25,5 +27,3 @@ const Index = () => (
     })}
   </Fragment>
 );
-
-export default Index;

@@ -1,9 +1,8 @@
 import { withRouter } from "next/router";
-import cx from "classnames";
 
-import Link from "@dpeter/components/Link";
-import Logo from "@dpeter/components/Logo";
-import css from "./index.less";
+import Link from "#components/Link";
+import Logo from "#components/Logo";
+import css from "./index.module.css";
 
 const Header = ({ router }) => (
   <header>

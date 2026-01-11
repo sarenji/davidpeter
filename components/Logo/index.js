@@ -1,7 +1,7 @@
 import { withRouter } from "next/router";
 import cx from "classnames";
-import Link from "@dpeter/components/Link";
-import css from "./index.less";
+import Link from "#components/Link";
+import css from "./index.module.css";
 
 const Logo = ({ router }) => {
   const isHome = router.pathname === "/";

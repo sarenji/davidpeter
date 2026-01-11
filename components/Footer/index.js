@@ -1,8 +1,8 @@
 import cx from "classnames";
 
-import Link from "@dpeter/components/Link";
-import SocialIcon from "@dpeter/components/SocialIcon";
-import css from "./index.less";
+import Link from "#components/Link";
+import SocialIcon from "#components/SocialIcon";
+import css from "./index.module.css";
 
 const SocialIcons = () => {
   return (

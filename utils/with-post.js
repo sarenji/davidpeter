@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 
-import MetaInfo from "@dpeter/components/MetaInfo";
+import MetaInfo from "#components/MetaInfo";
 
 const withPost = ({ title, date, spoiler, wordCount, className }) => ({
   children
