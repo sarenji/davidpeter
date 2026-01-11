@@ -3,8 +3,6 @@ import Header from "#components/Header";
 import Footer from "#components/Footer";
 import css from "./index.module.css";
 
-import "./global.css";
-
 const Layout = ({ children }) => (
   <html>
     <body>
