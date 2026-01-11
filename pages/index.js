@@ -3,8 +3,6 @@ import Link from "#components/Link";
 import MetaInfo from "#components/MetaInfo";
 import stories from "#preval/stories";
 
-console.log(stories);
-
 const latestStories = [...stories].sort(
   ({ meta: { date: a } }, { meta: { date: b } }) => {
     return new Date(b) - new Date(a);

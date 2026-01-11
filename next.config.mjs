@@ -2,8 +2,9 @@ import createMDX from '@next/mdx';
 
 const nextConfig = {
   output: 'export',
-    // Allow .mdx extensions for files
-    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  trailingSlash: true,
+  // Allow .mdx extensions for files
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
 const withMDX = createMDX({
